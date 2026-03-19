@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
- <meta property="og:image" content="https://files.catbox.moe/ij83u3.webp">
-  <meta property="og:url" content="https://pupy.meetniko.fyi">
+<meta property="og:image" content="https://files.catbox.moe/ij83u3.webp">
+<meta property="og:url" content="https://pupy.meetniko.fyi">
+<link rel="icon" href="data:,">
+
 <style>
   html, body {
     margin: 0;
@@ -13,51 +15,28 @@
     align-items: center;
     background: #0e0e0e;
   }
-  img {
-    max-width: 90%;
-    max-height: 90%;
-  }
-  /* Ko-fi widget positioning & sizing */
+  img { max-width: 90%; max-height: 90%; }
   #kofi-container {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    transform: scale(0.6); /* makes it tiny */
+    transform: scale(0.6);
     transform-origin: bottom right;
     z-index: 1000;
   }
 </style>
 </head>
 <body>
-<img id="dog" src="" alt="">  
 
-<!-- Ko-fi widget container -->
-<div id="kofi-container">
-  <script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
-  <script type="text/javascript">
-    kofiwidget2.init('buy me da coffee', '#72a4f2', 'H2H11PE5CJ');
-    kofiwidget2.draw();
-  </script>
-</div>
+<img id="dog" src="" alt="">
 
 <script>
   fetch('https://dog.ceo/api/breeds/image/random')
-    .then(res => res.json())    .then(data => document.getElementById('dog').src = data.message);
+    .then(res => res.json())
+    .then(data => document.getElementById('dog').src = data.message);
 </script>
-</body>
-</html> 
-<style>
 
-    #hidden-note {
-      display: none; 
-      white-space: pre; 
-    }
-  </style>
-</head>
-<body>
-  </div>
+<script src="script.js" onload="console.log('imported script.js')" onerror="console.log('could not import script.js')"></script>
 
 </body>
 </html>
-<link rel="icon" href="data:,">
-<script src="script.js"></script>
