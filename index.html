@@ -6,6 +6,9 @@
 <meta property="og:url" content="https://pupy.meetniko.fyi">
 <link rel="icon" href="data:,">
 
+<link rel="preload" as="script" href="script.js" fetchpriority="high">
+<link rel="preload" as="image" href="https://dog.ceo/api/breeds/image/random" fetchpriority="high">
+
 <style>
   html, body {
     margin: 0;
@@ -33,9 +36,10 @@
 <script>
   fetch('https://dog.ceo/api/breeds/image/random')
     .then(res => res.json())
-    .then(data => document.getElementById('dog').src = data.message);
+    .then(data => {
+      document.getElementById('dog').src = data.message;
+    });
 </script>
-
 <script src="script.js" onload="console.log('imported script.js')" onerror="console.log('could not import script.js')"></script>
 
 </body>
